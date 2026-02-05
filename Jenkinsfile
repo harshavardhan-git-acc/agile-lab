@@ -1,8 +1,8 @@
 pipeline {
     agent any
-    stages {
-        stage('Checkout') { steps { echo 'Checking out...' } }
-        stage('Build') { steps { echo 'Building...' } }
-        stage('Test') { steps { echo 'Testing...' } }
+    stages { stage('Work') { steps { echo 'Doing work...' } } }
+    post {
+        success { echo 'HOORAY! It worked.' }
+        failure { echo 'OH NO! It failed.' }
     }
 }
